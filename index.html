@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Indian 7-Day Weight Loss Diet Chart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .calorie-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 12px 25px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .progress-tracker {
+            padding: 25px;
+            background: #f1f8ff;
+            border-radius: 15px;
+            margin: 0 30px 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .progress-tracker h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.5em;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .progress-tracker h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+            border-radius: 3px;
+        }
+
+        .day-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .day-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            color: #0369a1;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .day-btn:hover::before {
+            left: 100%;
+        }
+
+        .day-btn.completed {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+        }
+
+        .day-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .diet-table-container {
+            padding: 0 30px;
+            margin-bottom: 40px;
+        }
+
+        .diet-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 0;
+            font-size: 0.95em;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .diet-table th {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 18px 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .diet-table th:first-child {
+            width: 70px;
+        }
+
+        .diet-table th:last-child {
+            border-right: none;
+        }
+
+        .diet-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+            line-height: 1.5;
+            font-size: 0.9em;
+            border-right: 1px solid #f1f5f9;
+        }
+
+        .diet-table td:last-child {
+            border-right: none;
+        }
+
+        .diet-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .diet-table tr:hover {
+            background-color: #f0f9ff;
+            transform: scale(1.005);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+
+        .day-cell {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .meal-content {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .meal-content::before {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            color: #3b82f6;
+            font-size: 0.8em;
+        }
+
+        .meal-content strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .notes-cell {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .nutrition-section {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            color: white;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 40px;
+            padding-top: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+            border-radius: 3px;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .nutrition-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nutrition-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .nutrition-card:hover::before {
+            transform: rotate(60deg);
+        }
+
+        .nutrition-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .nutrition-card h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .nutrition-card p {
+            opacity: 0.9;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .nutrition-description {
+            text-align: center;
+            opacity: 0.9;
+            font-size: 1.1em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .guidelines-section {
+            padding: 60px 30px 40px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            color: #334155;
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+            margin-top: -20px;
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .guideline-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border-top: 5px solid #3b82f6;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .guideline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .guideline-card h3 {
+            margin-bottom: 20px;
+            color: #2563eb;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guideline-card h3 i {
+            font-size: 1.2em;
+            color: #f59e0b;
+        }
+
+        .guideline-card ul {
+            list-style: none;
+        }
+
+        .guideline-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .guideline-card li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-size: 1em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #1e293b;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
+        .highlight-today {
+            position: relative;
+        }
+
+        .highlight-today::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(56, 182, 255, 0.1);
+            z-index: -1;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 0.3; }
+            100% { opacity: 0.6; }
+        }
+
+        @media (max-width: 992px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+            }
+            
+            .diet-table th, .diet-table td {
+                padding: 12px 10px;
+            }
+            
+            .nutrition-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .diet-table {
+                font-size: 0.8em;
+            }
+            
+            .diet-table th, .diet-table td {
+                padding: 10px 8px;
+            }
+            
+            .nutrition-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .day-buttons {
+                gap: 8px;
+            }
+            
+            .day-btn {
+                padding: 10px 15px;
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .calorie-badge {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            
+            .diet-table {
+                font-size: 0.7em;
+            }
+            
+            .meal-content {
+                padding-left: 18px;
+            }
+            
+            .meal-content::before {
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-utensils"></i> South Indian Weight Loss Diet Plan</h1>
+            <p>A 7-Day Scientifically Balanced Meal Plan for Healthy Weight Management</p>
+            <div class="calorie-badge"><i class="fas fa-fire"></i> 1200-1300 kcal/day • Optimal Nutrition</div>
+        </div>
+
+        <div class="progress-tracker">
+            <h3>Track Your Weekly Progress</h3>
+            <div class="day-buttons">
+                <button class="day-btn" onclick="toggleDay(this, 'Monday')"><i class="far fa-sun"></i> Monday</button>
+                <button class="day-btn" onclick="toggleDay(this, 'Tuesday')"><i class="far fa-sun"></i> Tuesday</button>
+                <button class="day-btn" onclick="toggleDay(this, 'Wednesday')"><i class="far fa-sun"></i> Wednesday</button>
+                <button class="day-btn" onclick="toggleDay(this, 'Thursday')"><i class="far fa-sun"></i> Thursday</button>
+                <button class="day-btn" onclick="toggleDay(this, 'Friday')"><i class="far fa-sun"></i> Friday</button>
+                <button class="day-btn" onclick="toggleDay(this, 'Saturday')"><i class="far fa-sun"></i> Saturday</button>
+                <button class="day-btn" onclick="toggleDay(this, 'Sunday')"><i class="far fa-sun"></i> Sunday</button>
+            </div>
+        </div>
+
+        <div class="diet-table-container">
+            <table class="diet-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast<br>(8 AM)</th>
+                        <th>Mid-Morning<br>(10:30 AM)</th>
+                        <th>Lunch<br>(1 PM)</th>
+                        <th>Evening<br>(4:30 PM)</th>
+                        <th>Dinner<br>(7:30 PM)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row-monday">
+                        <td class="day-cell">Mon</td>
+                        <td class="meal-content">2 ragi idlis + 1 boiled egg + sambar (1 cup)</td>
+                        <td class="meal-content">1 cup papaya + 5 almonds</td>
+                        <td class="meal-content">½ cup brown rice + sambar + 100g grilled fish + salad</td>
+                        <td class="meal-content">Sprouted green gram salad (½ cup)</td>
+                        <td class="meal-content">2 chapati + vegetable kurma (no coconut milk) + curd (½ cup)</td>
+                        <td class="notes-cell">Lemon water morning</td>
+                    </tr>
+                    <tr id="row-tuesday">
+                        <td class="day-cell">Tue</td>
+                        <td class="meal-content">1 dosa (foxtail millet) + coconut chutney (1 tbsp) + boiled egg</td>
+                        <td class="meal-content">1 orange + 2 walnuts</td>
+                        <td class="meal-content">½ cup foxtail millet + rasam + 100g chicken curry + stir fry veggies</td>
+                        <td class="meal-content">1 cup buttermilk + cucumber sticks</td>
+                        <td class="meal-content">1 cup upma (rava or millet) + mixed veggie sambar</td>
+                        <td class="notes-cell">Avoid excess salt</td>
+                    </tr>
+                    <tr id="row-wednesday">
+                        <td class="day-cell">Wed</td>
+                        <td class="meal-content">2 steamed oats idlis + peanut chutney (1 tbsp) + sambar</td>
+                        <td class="meal-content">1 banana (small) + 5 almonds</td>
+                        <td class="meal-content">½ cup brown rice + sambar + 100g grilled fish + veg salad</td>
+                        <td class="meal-content">Roasted chana (20 g) + lemon water</td>
+                        <td class="meal-content">2 phulkas + bottle gourd curry + curd (½ cup)</td>
+                        <td class="notes-cell">Drink 3L water</td>
+                    </tr>
+                    <tr id="row-thursday">
+                        <td class="day-cell">Thu</td>
+                        <td class="meal-content">1 pesarattu (green gram dosa) + chutney + boiled egg</td>
+                        <td class="meal-content">1 cup watermelon + 2 walnuts</td>
+                        <td class="meal-content">½ cup millet rice + rasam + 100g chicken + veggies</td>
+                        <td class="meal-content">Sprouted moong salad</td>
+                        <td class="meal-content">1 small bowl vegetable upma + tomato chutney</td>
+                        <td class="notes-cell">Avoid fried snacks</td>
+                    </tr>
+                    <tr id="row-friday">
+                        <td class="day-cell">Fri</td>
+                        <td class="meal-content">2 ragi dosas + sambar (1 cup)</td>
+                        <td class="meal-content">1 apple + 5 almonds</td>
+                        <td class="meal-content">½ cup brown rice + sambar + 100g grilled fish + salad</td>
+                        <td class="meal-content">1 cup buttermilk + roasted peanuts (15 g)</td>
+                        <td class="meal-content">2 chapati + mixed veg curry + curd (½ cup)</td>
+                        <td class="notes-cell">Evening walk</td>
+                    </tr>
+                    <tr id="row-saturday">
+                        <td class="day-cell">Sat</td>
+                        <td class="meal-content">2 idlis (fermented batter) + sambar + boiled egg</td>
+                        <td class="meal-content">1 orange + 2 walnuts</td>
+                        <td class="meal-content">½ cup foxtail millet + rasam + 100g chicken curry + veg fry</td>
+                        <td class="meal-content">Sprouted chana salad</td>
+                        <td class="meal-content">1 small bowl vegetable upma + chutney</td>
+                        <td class="notes-cell">Reduce rice dinner</td>
+                    </tr>
+                    <tr id="row-sunday">
+                        <td class="day-cell">Sun</td>
+                        <td class="meal-content">1 small uttapam + sambar (lots of veggies)</td>
+                        <td class="meal-content">1 cup papaya + 5 almonds</td>
+                        <td class="meal-content">½ cup brown rice + sambar + 100g grilled fish + salad</td>
+                        <td class="meal-content">Roasted chana (20 g) + lemon water</td>
+                        <td class="meal-content">2 phulkas + vegetable kurma (no coconut milk) + curd (½ cup)</td>
+                        <td class="notes-cell">Weekly cheat meal at lunch only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="nutrition-section">
+            <h2 class="section-title"><i class="fas fa-chart-pie"></i> Nutritional Breakdown</h2>
+            <div class="nutrition-grid">
+                <div class="nutrition-card">
+                    <h3>1200-1300</h3>
+                    <p>Calories (kcal)</p>
+                </div>
+                <div class="nutrition-card">
+                    <h3>55-65g</h3>
+                    <p>Protein</p>
+                </div>
+                <div class="nutrition-card">
+                    <h3>130-150g</h3>
+                    <p>Carbohydrates</p>
+                </div>
+                <div class="nutrition-card">
+                    <h3>35-40g</h3>
+                    <p>Fats</p>
+                </div>
+                <div class="nutrition-card">
+                    <h3>22-28g</h3>
+                    <p>Fiber</p>
+                </div>
+                <div class="nutrition-card">
+                    <h3>Complete</h3>
+                    <p>Micronutrients</p>
+                </div>
+            </div>
+            <p class="nutrition-description">
+                Rich in Vitamin C, Iron, Calcium, Potassium from fruits, vegetables, pulses, curd, and nuts. 
+                Scientifically balanced for optimal weight loss while maintaining energy levels.
+            </p>
+        </div>
+
+        <div class="guidelines-section">
+            <h2 class="section-title" style="color: #1e3a8a;"><i class="fas fa-lightbulb"></i> Success Guidelines</h2>
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <h3><i class="fas fa-utensils"></i> Cooking Guidelines</h3>
+                    <ul>
+                        <li>Max 2 tsp oil/day (gingelly, groundnut, or sunflower)</li>
+                        <li>No sugar in tea/coffee - use stevia if needed</li>
+                        <li>Steam, boil, or grill instead of deep frying</li>
+                        <li>Use herbs and spices for flavor instead of excess salt</li>
+                    </ul>
+                </div>
+                <div class="guideline-card">
+                    <h3><i class="fas fa-running"></i> Activity Guidelines</h3>
+                    <ul>
+                        <li>Walk 30-40 minutes daily (morning or evening)</li>
+                        <li>Light home workout or yoga (3-4 times/week)</li>
+                        <li>Take stairs instead of elevator when possible</li>
+                        <li>Stand and stretch every hour if sedentary</li>
+                    </ul>
+                </div>
+                <div class="guideline-card">
+                    <h3><i class="fas fa-heartbeat"></i> Lifestyle Guidelines</h3>
+                    <ul>
+                        <li>Sleep 7-8 hours daily for optimal metabolism</li>
+                        <li>Drink plenty of water (3+ liters throughout day)</li>
+                        <li>Manage stress through meditation or deep breathing</li>
+                        <li>Eat mindfully without distractions</li>
+                    </ul>
+                </div>
+                <div class="guideline-card">
+                    <h3><i class="fas fa-trophy"></i> Success Tips</h3>
+                    <ul>
+                        <li>Consistency is key - follow for at least 4 weeks</li>
+                        <li>Measure progress weekly, not daily</li>
+                        <li>Take before/after photos for motivation</li>
+                        <li>Celebrate non-scale victories like energy levels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 South Indian Weight Loss Diet Plan | Designed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by Health Experts</p>
+            <p>Consult your doctor before starting any new diet plan</p>
+        </div>
+    </div>
+
+    <script>
+        // Get current day and highlight it
+        const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const currentDay = days[new Date().getDay()];
+        
+        // Highlight today's row
+        const todayRow = document.getElementById(`row-${currentDay}`);
+        if (todayRow) {
+            todayRow.classList.add('highlight-today');
+        }
+
+        // Update day buttons to show today
+        const dayButtons = document.querySelectorAll('.day-btn');
+        dayButtons.forEach(btn => {
+            if (btn.textContent.toLowerCase().includes(currentDay)) {
+                btn.style.background = 'linear-gradient(135deg, #3b82f6, #2563eb)';
+                btn.style.color = 'white';
+                btn.innerHTML = `<i class="fas fa-sun"></i> ${btn.textContent.replace('far fa-sun', 'fas fa-sun')}`;
+            }
+        });
+
+        // Progress tracking functionality
+        function toggleDay(button, day) {
+            button.classList.toggle('completed');
+            
+            // Store progress in memory (not localStorage as per instructions)
+            if (!window.dietProgress) {
+                window.dietProgress = {};
+            }
+            
+            window.dietProgress[day] = button.classList.contains('completed');
+            
+            // Update icon
+            const icon = button.querySelector('i');
+            if (button.classList.contains('completed')) {
+                icon.classList.remove('far', 'fa-sun');
+                icon.classList.add('fas', 'fa-check');
+                showNotification(`Great job completing ${day}! 🎉 Keep up the good work!`);
+            } else {
+                icon.classList.remove('fas', 'fa-check');
+                icon.classList.add('far', 'fa-sun');
+            }
+        }
+
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #10b981, #34d399);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+                z-index: 1000;
+                font-weight: 600;
+                transform: translateX(300px);
+                transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                max-width: 90%;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-check-circle" style="font-size: 1.3em;"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(300px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 400);
+            }, 3000);
+        }
+
+        // Add interactive effects to meal cells
+        document.querySelectorAll('.meal-content').forEach(cell => {
+            cell.addEventListener('click', function() {
+                this.style.background = 'linear-gradient(135deg, #dbeafe, #bfdbfe)';
+                setTimeout(() => {
+                    this.style.background = '';
+                }, 1000);
+            });
+        });
+
+        // Welcome message
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                showNotification('Welcome to your healthy journey! 💪 You got this!');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
